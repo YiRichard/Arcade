@@ -67,6 +67,7 @@ public class GameBoard extends JFrame
         setResizable(false);
         initialize();
     }
+    boolean home = false;
     
     //this is used to construct the game
     private void initialize()
@@ -78,12 +79,17 @@ public class GameBoard extends JFrame
         word = new String();
         wordHidden = new StringBuilder();
         getPassword();
-        addTextPanel();
-        addLetterRack();
-        addHangman();
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation(dim.width / 2 - getSize().width / 2,dim.height / 2 - getSize().height / 2 - 200);
-        setVisible(true);
+        if(home == true)
+        {
+            addTextPanel();
+            addLetterRack();
+            addHangman();
+        }
+        else{
+            Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+            setLocation(dim.width / 2 - getSize().width / 2,180);
+            setVisible(true);
+            }
     }
     
     //gets the password
@@ -113,7 +119,8 @@ public class GameBoard extends JFrame
             }
                     
             else if (confirm == 1)
-                System.exit(0);
+                home = true;
+                break;
         }
         
         
