@@ -67,7 +67,7 @@ public class HomeScreen{
                 frame.setVisible(false);
                 arcadeTitle.setVisible(false);
                 panel.setVisible(false);
-                GameBoard newPhantomHangman = new GameBoard();
+                GameBoard newHangman = new GameBoard();
                 System.out.println("Starting Hangman!");
                 
             }
